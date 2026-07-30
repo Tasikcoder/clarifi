@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+frontend/.next/
+backend/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+backend/.env
+
+# Build artifacts
+.next/
+dist/
+build/
+
+# Docker
+*.msix
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docs (local files not needed in repo)
+docs/CLM-*/
+
+# Snowflake
+.snowflake/
+
+# Package lock (keep frontend's, exclude root)
+/package-lock.json
