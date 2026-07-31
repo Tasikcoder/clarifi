@@ -2,7 +2,7 @@
 
 ## Production URL
 
-**https://asaiy-yhnomry-uw19292.snowflakecomputing.app**
+**https://iqmwy-qicsmic-fi31542.snowflakecomputing.app**
 
 ---
 
@@ -20,20 +20,20 @@ docker build -f deploy/Dockerfile -t clarifi:latest .
 ### 2. Tag untuk Snowflake registry
 
 ```powershell
-docker tag clarifi:latest yhnomry-uw19292.registry.snowflakecomputing.com/clarifi/claims/clarifi_repo/clarifi:latest
+docker tag clarifi:latest qicsmic-fi31542.registry.snowflakecomputing.com/clarifi/claims/clarifi_repo/clarifi:latest
 ```
 
 ### 3. Login ke registry (jika belum)
 
 ```powershell
-docker login yhnomry-uw19292.registry.snowflakecomputing.com -u slametsantoso
+docker login qicsmic-fi31542.registry.snowflakecomputing.com -u muqenasantoso
 ```
 (masukkan password Snowflake saat diminta)
 
 ### 4. Push image baru
 
 ```powershell
-docker push yhnomry-uw19292.registry.snowflakecomputing.com/clarifi/claims/clarifi_repo/clarifi:latest
+docker push qicsmic-fi31542.registry.snowflakecomputing.com/clarifi/claims/clarifi_repo/clarifi:latest
 ```
 
 ### 5. Restart service (ambil image terbaru)
@@ -84,7 +84,7 @@ DROP COMPUTE POOL CLARIFI_POOL;
 |------|--------|
 | Compute Pool | `CLARIFI_POOL` (CPU_X64_XS, 1 node) |
 | Auto-suspend | 300 detik (5 menit idle) |
-| Image Registry | `yhnomry-uw19292.registry.snowflakecomputing.com/clarifi/claims/clarifi_repo` |
+| Image Registry | `qicsmic-fi31542.registry.snowflakecomputing.com/clarifi/claims/clarifi_repo` |
 | Service | `CLARIFI.CLAIMS.CLARIFI_APP` |
 | Port | 8080 (nginx reverse proxy) |
 | Auth (production) | OAuth token (`/snowflake/session/token`) |

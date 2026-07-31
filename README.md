@@ -2,7 +2,7 @@
 
 A domain-specific AI copilot that helps insurance claim officers make faster, consistent, and transparent adjudication decisions. Built entirely on **Snowflake**.
 
-**Live App:** [https://asaiy-yhnomry-uw19292.snowflakecomputing.app](https://asaiy-yhnomry-uw19292.snowflakecomputing.app)
+**Live App:** [https://iqmwy-qicsmic-fi31542.snowflakecomputing.app](https://iqmwy-qicsmic-fi31542.snowflakecomputing.app)
 
 ---
 

@@ -12,7 +12,7 @@ IS_SPCS = os.path.exists(SPCS_TOKEN_PATH)
 def get_snowflake_config() -> dict:
     """Build Snowflake connection config. Re-reads token on every call for SPCS freshness."""
     config = {
-        "account": os.getenv("SNOWFLAKE_ACCOUNT", "YHNOMRY-UW19292"),
+        "account": os.getenv("SNOWFLAKE_ACCOUNT", "QICSMIC-FI31542"),
         "database": os.getenv("SNOWFLAKE_DATABASE", "CLARIFI"),
         "schema": os.getenv("SNOWFLAKE_SCHEMA", "CLAIMS"),
         "warehouse": os.getenv("SNOWFLAKE_WAREHOUSE", "COMPUTE_WH"),
@@ -23,7 +23,7 @@ def get_snowflake_config() -> dict:
         config["token"] = open(SPCS_TOKEN_PATH).read()
         config["host"] = os.getenv("SNOWFLAKE_HOST", "")
     else:
-        config["user"] = os.getenv("SNOWFLAKE_USER", "slametsantoso")
+        config["user"] = os.getenv("SNOWFLAKE_USER", "muqenasantoso")
         config["password"] = os.getenv("SNOWFLAKE_PASSWORD", "")
 
     return config

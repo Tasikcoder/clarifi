@@ -4,7 +4,7 @@
 **Project:** ClariFi — Decision Support System for Health Insurance Claim Adjudication
 **Team:** Slamet Santoso
 **GitHub:** https://github.com/Tasikcoder/clarifi
-**Live App:** https://asaiy-yhnomry-uw19292.snowflakecomputing.app
+**Live App:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app
 
 ---
 
