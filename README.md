@@ -64,6 +64,14 @@ Auto-Pipeline: Stream → Task (1 min) → Auto-score + status update
 - SPCS container can scale horizontally (MIN/MAX_INSTANCES) for peak loads
 - Fuzzy AHP weights stored in database — can be tuned per product line, per region, or per risk category without code changes
 
+**How this extends beyond the demo:**
+- **Multi-tenant:** Add role-based access for different insurance companies on same platform
+- **Fine-tuned models:** Train domain-specific extraction model using Cortex Fine-Tuning on historical Indonesian medical documents
+- **Real-time fraud detection:** Combine similarity search with anomaly scoring to flag suspicious claim patterns
+- **Regulatory reporting:** Auto-generate OJK compliance reports from audit trail data
+- **Integration:** Connect to core insurance systems (policy administration, payment) via External Access Integration
+- **Multi-language:** Extend to English, Malay, or other regional languages with prompt adjustment only (no architectural change)
+
 ## Tech Stack
 
 | Layer | Technology |
