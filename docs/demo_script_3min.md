@@ -22,7 +22,7 @@
 
 ## [0:30 - 1:30] DEMO 1: Import PDF + Document Screening
 
-**URL:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/import
+**URL:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/import
 
 **Narration:**
 
@@ -56,7 +56,7 @@
 
 ## [1:30 - 2:40] DEMO 2: Claim Adjudication + Similar Claims + Decision
 
-**URL:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010
+**URL:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010
 
 **Narration:**
 
@@ -143,7 +143,7 @@ All demo documents are in `docs/demo_imports/`:
 ### Key URLs for Recording
 | Scene | URL |
 |-------|-----|
-| Import Documents | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/import |
-| Claims List | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims |
-| Emergency Claim | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010 |
-| Partial Approval Example | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005 |
+| Import Documents | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/import |
+| Claims List | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims |
+| Emergency Claim | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010 |
+| Partial Approval Example | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005 |

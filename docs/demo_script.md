@@ -1,7 +1,7 @@
 # Skrip Demo ClariFi — Decision Support System for Health Insurance Claim Adjudication
 
 **Durasi:** 10-15 menit
-**Base URL:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app
+**Base URL:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app
 **Presenter:** [Nama]
 
 ---
@@ -16,7 +16,7 @@
 
 ## BAGIAN 1: DASHBOARD OVERVIEW (1 menit)
 
-**Buka:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/
+**Buka:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/
 
 > "Di dashboard, kita bisa melihat ringkasan adjudikasi: berapa klaim yang auto-approved, manual review, dan auto-rejected. Sistem sudah memproses [X] klaim secara otomatis."
 
@@ -28,7 +28,7 @@
 
 ## BAGIAN 2: DAFTAR KLAIM (1 menit)
 
-**Buka:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims
+**Buka:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims
 
 > "Di halaman Claims, kita lihat semua klaim dengan berbagai status — warna hijau untuk Approved, kuning untuk Manual Review, merah untuk Rejected, oranye untuk Pending Clarification. Perhatikan bahwa sistem sudah otomatis mengklasifikasikan setiap klaim berdasarkan skornya."
 
@@ -41,7 +41,7 @@
 
 ## BAGIAN 3: IMPORT DATA VIA PDF (2-3 menit)
 
-**Buka:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/import
+**Buka:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/import
 
 > "Sebelum memproses klaim, kita perlu data master. ClariFi bisa mengekstrak data langsung dari dokumen PDF menggunakan Snowflake Cortex AI. Saya akan demo import data nasabah baru."
 
@@ -62,15 +62,15 @@
 **Key message:** "Dari dokumen tidak terstruktur menjadi data terstruktur — tanpa ketik manual."
 
 **Verifikasi:**
-- Cek data nasabah: https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/policyholders
-- Cek data polis: https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/policies
-- Cek aturan klaim: https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/rules
+- Cek data nasabah: https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/policyholders
+- Cek data polis: https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/policies
+- Cek aturan klaim: https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/rules
 
 ---
 
 ## BAGIAN 3b: DOCUMENT SCREENING — REJECT DOKUMEN SAMPAH (1 menit)
 
-**Tetap di:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/import
+**Tetap di:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/import
 
 > "Tapi bagaimana jika seseorang upload dokumen yang tidak relevan — misalnya brosur, foto pribadi, atau file kosong? Sistem ClariFi punya fitur pre-screening."
 
@@ -89,7 +89,7 @@
 
 ## BAGIAN 4: SUBMIT KLAIM BARU (2 menit)
 
-**Buka:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/new
+**Buka:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/new
 
 > "Sekarang kita simulasikan pengajuan klaim baru. Nasabah Rina Wulandari datang dengan diagnosis Gastritis Acute, rawat jalan di RS Bethesda."
 
@@ -110,7 +110,7 @@ Klik "Submit Claim"
 
 ## BAGIAN 5: AUTO-PIPELINE (1 menit)
 
-**Tetap di:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims
+**Tetap di:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims
 
 > "Di balik layar, Snowflake Stream mendeteksi klaim baru masuk. Dalam 1 menit, Task terjadwal akan otomatis menjalankan initial scoring. Kita tidak perlu klik apapun."
 
@@ -124,7 +124,7 @@ Klik "Submit Claim"
 
 ## BAGIAN 6: DETAIL KLAIM & ADJUDIKASI (3-4 menit)
 
-**Buka:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0009
+**Buka:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0009
 
 (Klaim Budi Santoso, ISPA, Rp 3.5jt — status MANUAL_REVIEW)
 
@@ -180,7 +180,7 @@ Klik "Submit Claim"
 
 ## BAGIAN 7: PARTIAL APPROVAL (1 menit)
 
-**Buka:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005
+**Buka:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005
 
 (Klaim Ahmad Fauzi, Acute Myocardial Infarction, Rp 85jt — sudah APPROVED)
 
@@ -197,16 +197,16 @@ Klik "Submit Claim"
 
 Jika ada waktu, tunjukkan juga:
 
-- **Klaim Rejected:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0004
+- **Klaim Rejected:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0004
   (Siti Rahayu, Cosmetic Rhinoplasty — auto-rejected score 16.66 karena prosedur kosmetik)
 
-- **Pending Clarification:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0007
+- **Pending Clarification:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0007
   (Dewi Kartika, Vertigo — MRI kepala butuh justifikasi tambahan)
 
-- **Approved with Conditions:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0008
+- **Approved with Conditions:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0008
   (Rudi Hermawan, Cholecystitis — perlu lampirkan hasil PA batu empedu)
 
-- **Emergency:** https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010
+- **Emergency:** https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010
   (Dewi Kartika, Appendicitis Perforata — emergency, biaya signifikan)
 
 ---
@@ -241,19 +241,19 @@ Jika ada waktu, tunjukkan juga:
 
 | Halaman | URL |
 |---------|-----|
-| Dashboard | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/ |
-| Claims List | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims |
-| New Claim | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/new |
-| Import Documents | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/import |
-| Policyholders | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/policyholders |
-| Policies | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/policies |
-| Claim Rules | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/rules |
-| Detail: ISPA (manual review) | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0009 |
-| Detail: Partial Approval | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005 |
-| Detail: Rejected (cosmetic) | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0004 |
-| Detail: Pending Clarification | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0007 |
-| Detail: Approved w/ Conditions | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0008 |
-| Detail: Emergency | https://iqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010 |
+| Dashboard | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/ |
+| Claims List | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims |
+| New Claim | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/new |
+| Import Documents | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/import |
+| Policyholders | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/policyholders |
+| Policies | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/policies |
+| Claim Rules | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/rules |
+| Detail: ISPA (manual review) | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0009 |
+| Detail: Partial Approval | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005 |
+| Detail: Rejected (cosmetic) | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0004 |
+| Detail: Pending Clarification | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0007 |
+| Detail: Approved w/ Conditions | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0008 |
+| Detail: Emergency | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010 |
 
 ---
 

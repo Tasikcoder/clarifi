@@ -64,6 +64,15 @@ def screen_document(raw_text: str, file_name: str = "") -> dict:
             "reason": "Classification unavailable, document passed by default",
         }
 
+    # If classification returned unknown, pass the document (fail-open)
+    if category == "unknown":
+        return {
+            "passed": True,
+            "category": "unknown",
+            "confidence": "low",
+            "reason": "Classification inconclusive, document passed by default",
+        }
+
     is_relevant = category in RELEVANT_CATEGORIES
 
     if is_relevant:
@@ -100,12 +109,21 @@ def _classify_document(text_sample: str) -> str:
 
     result = rows[0].get("RESULT")
     if isinstance(result, dict):
-        return result.get("label", "unknown")
+        # Handle both formats: {"label": "..."} and {"labels": ["..."]}
+        if "label" in result:
+            return result["label"]
+        if "labels" in result and isinstance(result["labels"], list) and result["labels"]:
+            return result["labels"][0]
+        return "unknown"
     if isinstance(result, str):
         import json
         try:
             parsed = json.loads(result)
-            return parsed.get("label", "unknown")
+            if "label" in parsed:
+                return parsed["label"]
+            if "labels" in parsed and isinstance(parsed["labels"], list) and parsed["labels"]:
+                return parsed["labels"][0]
+            return "unknown"
         except (json.JSONDecodeError, AttributeError):
             return result.strip().lower()
 
