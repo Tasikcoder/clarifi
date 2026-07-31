@@ -147,3 +147,14 @@ All demo documents are in `docs/demo_imports/`:
 | Claims List | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims |
 | Emergency Claim | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0010 |
 | Partial Approval Example | https://mqmwy-qicsmic-fi31542.snowflakecomputing.app/claims/CLM-2026-0005 |
+
+---
+
+## HOW THIS EXTENDS BEYOND THE DEMO
+
+- **Multi-tenant:** Add role-based access for different insurance companies on same platform
+- **Fine-tuned models:** Train domain-specific extraction model using Cortex Fine-Tuning on historical Indonesian medical documents
+- **Real-time fraud detection:** Combine similarity search with anomaly scoring to flag suspicious claim patterns
+- **Regulatory reporting:** Auto-generate OJK compliance reports from audit trail data
+- **Integration:** Connect to core insurance systems (policy administration, payment) via External Access Integration
+- **Multi-language:** Extend to English, Malay, or other regional languages with prompt adjustment only (no architectural change)
