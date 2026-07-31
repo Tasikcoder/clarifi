@@ -51,6 +51,19 @@ export default function ImportPage() {
 
   const handleSave = async () => {
     if (!preview) return;
+
+    // Validate: reject if data still contains placeholder text from LLM
+    if (importType === "policyholder") {
+      if (!preview.nama_lengkap || preview.nama_lengkap.toLowerCase().includes("string")) {
+        alert("Please fill in the Full Name field with actual data before saving.");
+        return;
+      }
+      if (preview.tanggal_lahir === "YYYY-MM-DD" || preview.no_ktp?.includes("string")) {
+        alert("Some fields still contain placeholder text. Please edit them with actual data before saving.");
+        return;
+      }
+    }
+
     setSaving(true);
     try {
       if (importType === "policyholder") {

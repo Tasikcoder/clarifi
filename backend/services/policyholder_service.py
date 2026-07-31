@@ -14,12 +14,12 @@ def create_policyholder(data: dict) -> dict:
             ph_id,
             data["nama_lengkap"],
             data["no_ktp"],
-            str(data.get("tanggal_lahir") or ""),
-            data.get("jenis_kelamin") or "",
-            data.get("alamat") or "",
-            data.get("no_telepon") or "",
-            data.get("email") or "",
-            str(data.get("tanggal_daftar") or ""),
+            data.get("tanggal_lahir") or None,
+            data.get("jenis_kelamin") or None,
+            data.get("alamat") or None,
+            data.get("no_telepon") or None,
+            data.get("email") or None,
+            data.get("tanggal_daftar") or None,
         ),
     )
     return {"policyholder_id": ph_id}

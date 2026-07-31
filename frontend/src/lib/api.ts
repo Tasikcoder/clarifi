@@ -14,7 +14,12 @@ export async function apiPost(path: string, data: unknown) {
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.detail || `API error: ${res.status}`);
+    const message = typeof err.detail === 'string'
+      ? err.detail
+      : Array.isArray(err.detail)
+        ? err.detail.map((e: any) => `${e.loc?.slice(-1)[0] || 'field'}: ${e.msg}`).join('; ')
+        : JSON.stringify(err.detail) || `API error: ${res.status}`;
+    throw new Error(message);
   }
   return res.json();
 }
@@ -26,7 +31,12 @@ export async function apiUpload(path: string, formData: FormData) {
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.detail || `API error: ${res.status}`);
+    const message = typeof err.detail === 'string'
+      ? err.detail
+      : Array.isArray(err.detail)
+        ? err.detail.map((e: any) => `${e.loc?.slice(-1)[0] || 'field'}: ${e.msg}`).join('; ')
+        : JSON.stringify(err.detail) || `API error: ${res.status}`;
+    throw new Error(message);
   }
   return res.json();
 }

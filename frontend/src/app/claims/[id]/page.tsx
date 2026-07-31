@@ -385,7 +385,18 @@ export default function ClaimDetailPage() {
                 </tr>
               </thead>
               <tbody>
-                {adjudication.criteria_breakdown?.map((c: any, i: number) => (
+                {(Array.isArray(adjudication.criteria_breakdown)
+                  ? adjudication.criteria_breakdown
+                  : Object.entries(adjudication.criteria_breakdown || {}).map(([key, val]: [string, any]) => ({
+                      criteria_name: key.replace(/_/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()),
+                      weight: val.weight,
+                      linguistic_label: val.label || val.score?.toFixed(2),
+                      tfn: null,
+                      defuzzified: val.score?.toFixed(2),
+                      weighted_contribution: ((val.score || 0) * (val.weight || 0) * 100).toFixed(1),
+                      reason: "",
+                    }))
+                )?.map((c: any, i: number) => (
                   <tr key={i}>
                     <td className="border p-2 font-medium">{c.criteria_name}</td>
                     <td className="border p-2 text-center">{(c.weight * 100).toFixed(0)}%</td>
