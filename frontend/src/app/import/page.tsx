@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { apiPost, apiUpload } from "@/lib/api";
 
 type ImportType = "policyholder" | "policy" | "rules";
@@ -12,6 +12,14 @@ export default function ImportPage() {
   const [preview, setPreview] = useState<any>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const resetForm = () => {
+    setFile(null);
+    setPreview(null);
+    setSaved(false);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
 
   const handleExtract = async () => {
     if (!file) return;
@@ -24,6 +32,7 @@ export default function ImportPage() {
       const res = await apiUpload(`/import/${importType}/extract`, formData);
       if (res.status === "rejected") {
         alert(`Document rejected: ${res.message || "Not relevant to insurance claims"}\n\nCategory: ${res.data?.screening?.category || "unknown"}`);
+        resetForm();
         return;
       }
       // For rules, handle nested structure
@@ -66,6 +75,8 @@ export default function ImportPage() {
         }
       }
       setSaved(true);
+      setFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (e: any) {
       alert("Save failed: " + e.message);
     } finally {
@@ -99,7 +110,7 @@ export default function ImportPage() {
         ].map((t) => (
           <button
             key={t.key}
-            onClick={() => { setImportType(t.key); setPreview(null); setSaved(false); }}
+            onClick={() => { setImportType(t.key); resetForm(); }}
             className={`px-4 py-2 rounded text-sm font-medium ${
               importType === t.key ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
@@ -113,6 +124,7 @@ export default function ImportPage() {
       <div className="bg-white p-6 rounded-lg shadow-sm border mb-6">
         <h2 className="font-semibold text-gray-700 mb-3">Upload Document (.pdf / .docx)</h2>
         <input
+          ref={fileInputRef}
           type="file"
           accept=".docx,.pdf"
           onChange={(e) => { setFile(e.target.files?.[0] || null); setPreview(null); setSaved(false); }}
@@ -240,6 +252,12 @@ export default function ImportPage() {
             {importType === "policy" && "View in Policies page."}
             {importType === "rules" && "View in Rules page."}
           </p>
+          <button
+            onClick={resetForm}
+            className="mt-3 px-4 py-2 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700"
+          >
+            Import Another Document
+          </button>
         </div>
       )}
     </div>

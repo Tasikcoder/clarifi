@@ -28,7 +28,9 @@
 
 > [0:30] "Let's see ClariFi in action. First — importing master data from PDF documents."
 
-**Action:** Select "Policyholder" → Upload `data_nasabah_rina.pdf` → Click "Extract & Preview"
+**Action:** Select "Policyholder" → Upload `data_nasabah_kartini.pdf` → Click "Extract & Preview"
+
+*(File location: `docs/demo_imports/data_nasabah_kartini.pdf` — contains Kartini Widodo's registration form)*
 
 > [0:40] "The system first screens the document using AI Classify — filtering out irrelevant files before sending to the LLM. This saves processing cost."
 
@@ -40,7 +42,9 @@
 
 > [1:05] "Now watch what happens with an irrelevant document."
 
-**Action:** Upload a non-medical file → Click "Extract & Preview" → Alert shows "Document rejected"
+**Action:** Upload `brosur_wisata_bali.pdf` → Click "Extract & Preview" → Alert shows "Document rejected"
+
+*(File location: `docs/demo_imports/brosur_wisata_bali.pdf` — a travel brochure, clearly irrelevant)*
 
 > [1:15] "Rejected instantly. The AI classified it as irrelevant — no LLM credits wasted. Two-layer validation: text quality check, then AI classification."
 
@@ -91,6 +95,23 @@
 > [2:52] "Snowflake is not just a data warehouse — it's a complete platform for AI-powered applications. ClariFi proves it. From document ingestion to intelligent scoring to real-time automation — all within a single, secure platform."
 
 > [2:58] "ClariFi — Adjudication with Clarity."
+
+---
+
+## DEMO FILES
+
+All demo documents are in `docs/demo_imports/`:
+
+| File | Purpose | Expected Result |
+|------|---------|----------------|
+| `data_nasabah_kartini.pdf` | Import policyholder data | Extracts: Kartini Widodo, NIK 3374015503880001, Solo |
+| `kontrak_polis_kartini.pdf` | Import policy contract | Extracts: Gold plan, limit Rp100jt, exclusions |
+| `pedoman_aturan_klaim.pdf` | Import claim rules | Extracts: 5 adjudication rules |
+| `formulir_klaim_kartini.pdf` | Upload as claim document | Claim form: Gastritis, Rp7jt, RS Bethesda |
+| `hasil_lab_kartini.pdf` | Upload as claim document | Lab results: H.Pylori positive |
+| `kuitansi_kartini.pdf` | Upload as claim document | Receipt: Rp7jt breakdown |
+| `brosur_wisata_bali.pdf` | Test document rejection | REJECTED: travel brochure (irrelevant) |
+| `catatan_resep_masakan.pdf` | Test document rejection | REJECTED: recipe book (irrelevant) |
 
 ---
 
